@@ -8,7 +8,6 @@
 
 #include <csrc_dipu/vendor/mt/vendorapi.h>
 
-vendorapi
 
 namespace dipu {
 
