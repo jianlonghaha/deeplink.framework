@@ -27,7 +27,7 @@ else()
 endif()
 
 # include
-find_path(MUSA_INCLUDE_DIR NAMES musa.h musa_runtime_api.h musa_runtime.h PATHS ${MUSA_PATH}/include)
+find_path(MUSA_INCLUDE_DIR NAMES musa.h musa_runtime_api.h musa_runtime.h HINTS ${MUSA_PATH}/include)
 MESSAGE("MUSA_INCLUDE_DIR:" ${MUSA_INCLUDE_DIR})
 IF (NOT MUSA_INCLUDE_DIR)
   MESSAGE(FATAL_ERROR " Could not find musa.h. Make sure fullstack is installed, or MUSA_PATH is set properly.")
@@ -35,7 +35,7 @@ ENDIF()
 
 # libmccl.so
 find_library(MUSA_MCCL_LIBRARY mccl
-  ${MUSA_PATH}/lib 
+   HINTS ${MUSA_PATH}/lib 
 )
 MESSAGE("MUSA_MCCL_LIBRARY:" ${MUSA_MCCL_LIBRARY})
 IF (NOT MUSA_MCCL_LIBRARY)
@@ -44,7 +44,7 @@ ENDIF()
 
 # libmusart.so
 find_library(MUSART_LIBRARY musart
-  ${MUSA_PATH}/lib 
+   HINTS ${MUSA_PATH}/lib 
 )
 MESSAGE("MUSART_LIBRARY:" ${MUSART_LIBRARY})
 IF (NOT MUSART_LIBRARY)
