@@ -2,7 +2,7 @@
 
 #include <csrc_dipu/common.h>
 #include <csrc_dipu/runtime/device/diclapis.h>
-#include <csrc_dipu/vendor/mt/vendorapi.h>
+#include <csrc_dipu/vendor/musa/vendorapi.h>
 
 
 /*** MCCL CAPABILITY CHECK ***/
@@ -45,7 +45,7 @@ static const std::map<at::ScalarType, mcclDataType_t> mcclDataType = {
     {at::kInt, mcclInt32},         {at::kLong, mcclInt64},
     {at::kHalf, mcclHalf},         {at::kBool, mcclUint8},
 #if HAS_MCCL_BF16_DATATYPE
-    {at::kBFloat16, mcclBfloat16},
+    {at::kBFloat16, mcclFloat16},
 #endif
 };
 

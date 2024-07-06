@@ -6,7 +6,7 @@
 #include <csrc_dipu/common.h>
 #include <csrc_dipu/runtime/device/deviceapis.h>
 
-#include <csrc_dipu/vendor/mt/vendorapi.h>
+#include <csrc_dipu/vendor/musa/vendorapi.h>
 
 
 namespace dipu {
