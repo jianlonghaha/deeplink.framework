@@ -41,6 +41,7 @@ enum class VendorDeviceType : enum_t {
   DROPLET,  // droplet
   SUPA,     // Biren
   KLX,      // Kunlunxin
+  MUSA,     // musa
 };
 
 enum class EventStatus : enum_t { PENDING, RUNNING, DEFERRED, READY };

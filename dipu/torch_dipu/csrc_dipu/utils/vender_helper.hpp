@@ -28,6 +28,8 @@ inline const char* VendorDeviceTypeToStr(devapis::VendorDeviceType t) {
       return "SUPA";
     case devapis::VendorDeviceType::KLX:
       return "KLX";
+    case devapis::VendorDeviceType::MUSA:
+      return "MUSA";
     default:
       throw std::invalid_argument("Unknown device type");
   }
@@ -54,6 +56,9 @@ inline devapis::VendorDeviceType VendorNameToDeviceType(const char* str) {
   DIPU_MAY_CAST_VENDOR_NAME_TO_DEVICE_TYPE(droplet, DROPLET);
   DIPU_MAY_CAST_VENDOR_NAME_TO_DEVICE_TYPE(supa, SUPA);
   DIPU_MAY_CAST_VENDOR_NAME_TO_DEVICE_TYPE(kunlunxin, KLX);
+  DIPU_MAY_CAST_VENDOR_NAME_TO_DEVICE_TYPE(musa, MUSA);
+
+
 #undef DIPU_MAY_CAST_VENDOR_NAME_TO_DEVICE_TYPE
   throw std::invalid_argument("Unknown device name");
 }
