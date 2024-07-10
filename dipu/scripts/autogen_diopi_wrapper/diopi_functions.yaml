@@ -2852,7 +2852,7 @@
   generate_device_guard: False
   dummy_call_diopi: True
   custom_fallback: True
-  device: [cuda, muxi, camb, ascend, droplet, supa, kunlunxin]
+  device: [cuda, muxi, camb, ascend, droplet, supa, kunlunxin,musa]
   custom_code_at_the_beginning: |
     dipu::getDipuCopyInstance()->run(self, src, non_blocking);
     return self;
