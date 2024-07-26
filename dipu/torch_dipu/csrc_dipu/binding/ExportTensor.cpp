@@ -19,6 +19,7 @@
 
 #include "exportapi.h"
 
+#include <iostream>
 using std::unique_ptr;
 
 namespace dipu {
@@ -26,6 +27,8 @@ static at::Tensor dispatch_to(
     const at::Tensor& self, at::Device device, bool non_blocking, bool copy,
     c10::optional<c10::MemoryFormat> optional_memory_format) {
   pybind11::gil_scoped_release no_gil;
+  std::cout << "==================== " << device << " ==========================\n";
+
   // NOTE: this is where we record aten::to in the graph during tracing.
   // However, the behavior of aten::to is different with respect to
   // TensorOptions fields that are not present: aten::to inherits fields that
@@ -141,8 +144,8 @@ static inline at::Backend dipu_mock_backend(at::Backend backend) {
   switch (backend) {
     case at::Backend::CUDA:
       return DIPU_BACKEND_TYPE;
-    case at::Backend::SparseCUDA:
-      return DIPU_BACKEND_SPARSE_TYPE;
+    // case at::Backend::SparseCUDA:
+    //   return DIPU_BACKEND_SPARSE_TYPE;
     default:
       return backend;
   }
