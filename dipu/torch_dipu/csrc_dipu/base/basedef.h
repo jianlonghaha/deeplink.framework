@@ -6,7 +6,8 @@
 
 #include "csrc_dipu/runtime/device/basedef.h"
 
-#define DIPU_DEVICE_TYPE_MACRO XPU
+// #define DIPU_DEVICE_TYPE_MACRO XPU
+#define DIPU_DEVICE_TYPE_MACRO PrivateUse1
 #define DIPU_AUTOGRAD_DEVICE_TYPE_MACRO \
   C10_CONCATENATE(Autograd, DIPU_DEVICE_TYPE_MACRO)
 #define DIPU_AUTOCAST_DEVICE_TYPE_MACRO \
@@ -29,8 +30,8 @@ const auto DIPU_DISPATCH_AUTOGRAD_KEY =
     c10::DispatchKey::DIPU_AUTOGRAD_DEVICE_TYPE_MACRO;
 
 const auto DIPU_BACKEND_TYPE = c10::Backend::DIPU_DEVICE_TYPE_MACRO;
-const auto DIPU_BACKEND_SPARSE_TYPE =
-    c10::Backend::DIPU_SPARSE_DEVICE_TYPE_MACRO;
+// const auto DIPU_BACKEND_SPARSE_TYPE =
+//     c10::Backend::DIPU_SPARSE_DEVICE_TYPE_MACRO;
 
 const auto DICL_BACKEND_NAME = "dicl";
 
