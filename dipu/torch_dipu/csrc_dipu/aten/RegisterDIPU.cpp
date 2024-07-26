@@ -133,7 +133,6 @@ void dipu_fallback(const c10::OperatorHandle& op, DispatchKeySet dispatch_keys,
   dipu::dump_fallback_op_args(op, stack);
   const auto name = c10::toString(op.operator_name());
   DIPU_OP_LOG_WARNING_ONCE("fallback to cpu, name=" << name << std::endl);
-
 #if DIPU_TORCH_VERSION < 20100
   // TORCH_CHECK(name.find("foreach") == std::string::npos,
   //   "Currently the foreach operator does not support fallback: ", name);

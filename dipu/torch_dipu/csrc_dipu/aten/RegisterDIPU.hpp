@@ -65,7 +65,7 @@ void dipu_fallback(const c10::OperatorHandle& op, DispatchKeySet dispatch_keys,
       }                                                                        \
     } else {                                                                   \
       if ((reinterpret_cast<void*>(diopiFunc) == nullptr)) {                   \
-        DIPU_OP_LOG_WARNING_ONCE(#diopiFunc << " is not yet implemented, "     \
+        DIPU_OP_LOG_WARNING_ONCE(#diopiFunc << " 01 is not yet implemented, "     \
                                             << (opname)                        \
                                             << " will be fallback to cpu\n");  \
       } else {                                                                 \
@@ -84,7 +84,7 @@ void dipu_fallback(const c10::OperatorHandle& op, DispatchKeySet dispatch_keys,
       m.impl(opname, TORCH_FN(wrapperFunc));                                   \
     } else {                                                                   \
       if ((reinterpret_cast<void*>(diopiFunc) == nullptr)) {                   \
-        DIPU_OP_LOG_WARNING_ONCE(#diopiFunc << " is not yet implemented, "     \
+        DIPU_OP_LOG_WARNING_ONCE(#diopiFunc << " 02 is not yet implemented, "     \
                                             << (opname)                        \
                                             << " will be fallback to cpu\n");  \
       } else {                                                                 \
@@ -114,7 +114,7 @@ void dipu_fallback(const c10::OperatorHandle& op, DispatchKeySet dispatch_keys,
       }                                                                        \
     } else {                                                                   \
       if ((reinterpret_cast<void*>(diopi_func) == nullptr)) {                  \
-        DIPU_OP_LOG_WARNING_ONCE(#diopi_func << " is not yet implemented, "    \
+        DIPU_OP_LOG_WARNING_ONCE(#diopi_func << " 03 is not yet implemented, "    \
                                              << (opname)                       \
                                              << " will be fallback to cpu\n"); \
       } else {                                                                 \
@@ -138,7 +138,7 @@ void dipu_fallback(const c10::OperatorHandle& op, DispatchKeySet dispatch_keys,
       m.impl(opname, TORCH_FN(wrapper_func));                                  \
     } else {                                                                   \
       if ((reinterpret_cast<void*>(diopi_func) == nullptr)) {                  \
-        DIPU_OP_LOG_WARNING_ONCE(#diopi_func << " is not yet implemented, "    \
+        DIPU_OP_LOG_WARNING_ONCE(#diopi_func << " 04 is not yet implemented, "    \
                                              << (opname)                       \
                                              << " will be fallback to cpu\n"); \
       } else {                                                                 \
